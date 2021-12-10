@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  .layout{
+    background-color: #ddd;
+    width: 800px;
+    height: 500px;
+    padding: 5px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: 80px 1fr 80px;
+    grid-template-areas: " header header header header header header header header header header"
+    "section section section section section section section section aside aside"
+    "footer footer footer footer footer footer footer footer footer footer";
+  }
+  .layout header{
+    background-color: rgb(30, 114, 210);
+    grid-area: header;
+  }
+  .layout header::before{
+    content: "Header";
+    padding: 10px;
+    color: white;
+  }
+  .layout section{
+    background-color: tomato;
+    grid-area: section;
+  }
+  .layout section::before{
+    content: "section";
+    padding: 10px;
+    color: white;
+  }
+  .layout aside{
+    background-color: rgb(129, 127, 125);
+    grid-area: aside;
+  }
+  .layout aside::before{
+    content: "aside";
+    padding: 10px;
+    color: white;
+  }
+  .layout footer{
+    background-color: #009688;
+    grid-area: footer;
+  }
+  .layout footer::before{
+    content: "footer";
+    padding: 10px;
+    color: white;
+  }
+</style>
+<body>
+  <div class="layout">
+    <header></header>
+    <section></section>
+    <aside></aside>
+    <footer></footer>
+  </div>
+</body>
+</html>
